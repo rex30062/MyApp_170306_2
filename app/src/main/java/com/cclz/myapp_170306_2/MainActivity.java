@@ -14,16 +14,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button btn=(Button) findViewById(R.id.button); //指向畫面上的按鈕
-        MyClass c=new MyClass();
-        btn.setOnClickListener(c);// 設定一個符合介面的物件
-
+        btn.setOnClickListener(new View.OnClickListener(){// 設定一個符合介面的物件
+            @Override
+            public void onClick(View v) {
+                Log.d("BTN","Test1");
+            }
+        });
     }
-    class MyClass implements View.OnClickListener{
-        @Override
-        public void onClick(View v) {
-            Log.d("BTN","Test1");
-        }
-    }
-
-
 }
