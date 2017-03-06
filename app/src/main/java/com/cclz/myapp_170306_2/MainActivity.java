@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity
 
         btn=(Button) findViewById(R.id.button); //指向畫面上的按鈕
         btn2=(Button) findViewById(R.id.button2);
-        btn.setOnClickListener(this);
+        btn.setOnClickListener(this); // 設定一個符合介面的物件
         btn2.setOnClickListener(this);
     }
 
