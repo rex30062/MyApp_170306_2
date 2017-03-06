@@ -6,7 +6,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+    implements  View.OnClickListener{
     Button btn, btn2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,17 +16,19 @@ public class MainActivity extends AppCompatActivity {
 
         btn=(Button) findViewById(R.id.button); //指向畫面上的按鈕
         btn2=(Button) findViewById(R.id.button2);
-        btn.setOnClickListener(new View.OnClickListener(){// 設定一個符合介面的物件
-            @Override
-            public void onClick(View v) {
+        btn.setOnClickListener(this);
+        btn2.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.button:
                 Log.d("BTN","Test1");
-            }
-        });
-        btn2.setOnClickListener(new View.OnClickListener(){// 設定一個符合介面的物件
-            @Override
-            public void onClick(View v) {
+                break;
+            case R.id.button2:
                 Log.d("BTN","Test2");
-            }
-        });
+                break;
+        }
     }
 }
